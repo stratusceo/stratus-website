@@ -100,10 +100,10 @@ export default function Footer({ timeline }) {
 
                     <div className="list">
                         <Link href="/" onClick={() => timeline ? timeline.killAll() : undefined}>Home</Link>
-                        <Link href="/work.html" onClick={() => timeline ? timeline.killAll() : undefined}>Work</Link>
-                        <Link href="/about.html" onClick={() => timeline ? timeline.killAll() : undefined}>About</Link>
-                        <Link href="/blog.html" onClick={() => timeline ? timeline.killAll() : undefined}>Blog</Link>
-                        <Link href="/contact.html" onClick={() => timeline ? timeline.killAll() : undefined}>Contact</Link>
+                        <Link href="/work" onClick={() => timeline ? timeline.killAll() : undefined}>Work</Link>
+                        <Link href="/about" onClick={() => timeline ? timeline.killAll() : undefined}>About</Link>
+                        <Link href="/blog" onClick={() => timeline ? timeline.killAll() : undefined}>Blog</Link>
+                        <Link href="/contact" onClick={() => timeline ? timeline.killAll() : undefined}>Contact</Link>
                     </div>
                 </div>
 
@@ -112,7 +112,7 @@ export default function Footer({ timeline }) {
 
                     <div className="list">
                         {/* <Link href="/rgpd" onClick={() => timeline ? timeline.killAll() : undefined}>RGPD</Link> */}
-                        <Link href="/legal.html" onClick={() => timeline ? timeline.killAll() : undefined}>Legal</Link>
+                        <Link href="/legal" onClick={() => timeline ? timeline.killAll() : undefined}>Legal</Link>
                     </div>
                 </div>
             </div>

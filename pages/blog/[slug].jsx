@@ -105,7 +105,7 @@ export default function Post({ allPostsData }) {
 
             <div className="row">
                 {otherPostsData.slice(0, 2).map(({ id, bannerImage, date, title }, i) => (
-                    <Link href={`/blog/${id}.html`} key={i}>
+                    <Link href={`/blog/${id}`} key={i}>
                         <div className="post">
                             <Image
                                 src={bannerImage}

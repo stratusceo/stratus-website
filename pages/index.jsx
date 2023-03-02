@@ -318,7 +318,7 @@ export default function App() {
 					</div>
 				</div>
 
-				<Link href="/work.html" className="link">SEE MORE</Link>
+				<Link href="/work" className="link">SEE MORE</Link>
 			</section>
 
 			<section className="track">

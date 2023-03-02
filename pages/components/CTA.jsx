@@ -5,7 +5,7 @@ export default function CTA() {
         <section className="call-to-action">
             <h2>discover without limits start your project now</h2>
 
-            <Link href="/contact.html">GET STARTED</Link>
+            <Link href="/contact">GET STARTED</Link>
 
             <div className="background"></div>
         </section>

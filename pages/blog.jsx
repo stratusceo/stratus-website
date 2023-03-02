@@ -28,7 +28,7 @@ export default function Blog({ allPostsData }) {
                     />
                 </div>
 
-                <Link href={`/blog/${headline.id}.html`}>
+                <Link href={`/blog/${headline.id}`}>
                     <div className="post-headline-content">
                         <h1>{headline.title}</h1>
                         <div className="bottom">

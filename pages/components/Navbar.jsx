@@ -17,13 +17,13 @@ export default function Navbar() {
         href: "/"
     }, {
         name: "work",
-        href: "/work.html"
+        href: "/work"
     }, {
         name: "blog",
-        href: "/blog.html"
+        href: "/blog"
     }, {
         name: "about",
-        href: "/about.html"
+        href: "/about"
     }]
 
     const handleNavbar = e => {
