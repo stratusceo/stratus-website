@@ -24,7 +24,7 @@ module.exports = {
       paths = {
         ...paths,
         [`/blog/${element.id}`]: {
-          page: `/blog/${element.id}`,
+          page: `/blog`,
           query: { slug: element.id }
         }
       };
@@ -36,7 +36,8 @@ module.exports = {
       '/work': { page: '/work' },
       '/contact': { page: '/contact' },
       '/legal': { page: '/legal' },
-      // ...paths,
+      '/blog': { page: '/blog' },
+      ...paths,
     }
   },
 }
