@@ -24,7 +24,7 @@ module.exports = {
       paths = {
         ...paths,
         [`/blog/${element.id}`]: {
-          page: `/blog`,
+          page: `/blog/${element.id}`,
           query: { slug: element.id }
         }
       };

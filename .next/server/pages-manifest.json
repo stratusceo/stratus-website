@@ -2,15 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/about": "pages/about.js",
-  "/components/CTA": "pages/components/CTA.js",
-  "/components/Footer": "pages/components/Footer.js",
-  "/components/Navbar": "pages/components/Navbar.js",
-  "/contact": "pages/contact.js",
-  "/": "pages/index.js",
-  "/layout": "pages/layout.js",
-  "/legal": "pages/legal.js",
-  "/work": "pages/work.js",
-  "/blog": "pages/blog.js",
   "/blog/[slug]": "pages/blog/[slug].js"
 }
