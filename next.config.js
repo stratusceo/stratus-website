@@ -36,7 +36,7 @@ module.exports = {
       '/work': { page: '/work' },
       '/contact': { page: '/contact' },
       '/legal': { page: '/legal' },
-      ...paths,
+      // ...paths,
     }
   },
 }
