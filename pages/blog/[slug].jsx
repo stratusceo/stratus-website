@@ -19,7 +19,7 @@ export default function Post({ allPostsData }) {
     const [content, setContent] = useState();
 
     // Get the query parameter from the URL
-    const { slug } = router.query;
+    const [slug, setSlug] = useState(router.query.slug);
     const allPostsDataCopy = allPostsData;
 
     const [html, setHTML] = useState();
@@ -55,9 +55,7 @@ export default function Post({ allPostsData }) {
                 setOtherPostsData(allPostsDataCopy);
                 setLoad(true);
             }
-
         }
-
     }, [load, content, allPostsData, slug, otherPostsData, allPostsDataCopy]);
 
     return load ? <>
@@ -79,7 +77,6 @@ export default function Post({ allPostsData }) {
             <meta property="twitter:title" content={content.title} />
             <meta property="twitter:description" content={description} />
             <meta property="twitter:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
-
         </Head>
 
         <section className="post headline">
@@ -105,7 +102,11 @@ export default function Post({ allPostsData }) {
 
             <div className="row">
                 {otherPostsData.slice(0, 2).map(({ id, bannerImage, date, title }, i) => (
-                    <Link href={`/blog/${id}`} key={i}>
+                    <Link href={`/blog/${id}`} onClick={() => {
+                        setSlug(id)
+                        setLoad(false)
+                        setContent(undefined)
+                    }} key={i}>
                         <div className="post">
                             <Image
                                 src={bannerImage}

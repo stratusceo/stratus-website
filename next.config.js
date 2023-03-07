@@ -7,10 +7,8 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  exportPathMap: async function (
-    defaultPathMap,
-    { dev, dir, outDir, distDir, buildId }
-  ) {
+  exportPathMap: async function () {
+    // query all blog paths
     const allPostsData = await fetch("https://api.stratusagency.io/posts")
       .then(async (response) => {
         const json = await response.json();
@@ -19,13 +17,13 @@ module.exports = {
 
     let paths = {};
 
-    // query all blog paths
+    // sort all blog paths
     Object.values(allPostsData).forEach(element => {
       paths = {
         ...paths,
         [`/blog/${element.id}`]: {
           page: `/blog/${element.id}`,
-          query: { slug: element.id }
+          query: { slug: element.id, __nextDefaultLocale: 'en', __nextDataReq: true }
         }
       };
     });
@@ -36,7 +34,7 @@ module.exports = {
       '/work': { page: '/work' },
       '/contact': { page: '/contact' },
       '/legal': { page: '/legal' },
-      '/blog': { page: '/blog' },
+      '/blog': { page: '/blog', __nextDefaultLocale: 'en', __nextDataReq: true },
       ...paths,
     }
   },

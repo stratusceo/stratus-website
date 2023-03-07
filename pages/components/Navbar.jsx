@@ -9,6 +9,53 @@ import navbarImage from "../../static/images/navbar-image.webp"
 import logoLargeBlackImage from "../../static/images/logo-large-black.svg"
 import hamburgerIcon from "../../static/images/hamburger-icon.svg"
 
+const CloseNavbar = () => {
+    // handle hide
+    const timeline = gsap.timeline();
+
+    timeline.to("section.navbar div.element a", {
+        y: "100%",
+        ease: "power4.out",
+        duration: 0.8,
+        stagger: 0.1,
+    }, 0);
+
+    timeline.to("section.navbar p", {
+        y: "100%",
+        ease: "power4.out",
+        duration: 0.4,
+        stagger: 0.1,
+    }, 0);
+
+    // create a form
+    
+
+    timeline.to("section.navbar hr", {
+        width: "0",
+        ease: "power4.out",
+        duration: 0.8,
+        stagger: 0.1,
+    }, 0);
+
+    timeline.to("section.navbar img", {
+        height: "0%",
+        ease: "power4.out",
+        duration: 0.8,
+    }, 0.4);
+
+    timeline.to("section.navbar", {
+        y: "-100vh",
+        ease: "power4.inOut",
+        duration: 1,
+        onComplete: () => {
+            document.querySelector("section.navbar").classList.remove("show");
+            document.querySelector("section.navbar img").style.height = "0";
+            document.querySelector("section.navbar div.gray-divider").style.height = "0";
+            document.querySelectorAll("section.navbar div.links a").forEach(element => element.style.transform = "translateY(-100%)");
+        }
+    }, 0.6);
+}
+
 export default function Navbar() {
     const hamburgerButtonRef = useRef();
 
@@ -30,47 +77,7 @@ export default function Navbar() {
         e.preventDefault();
 
         if (document.querySelector("section.navbar").classList.contains("show")) {
-            // handle hide
-            const timeline = gsap.timeline();
-
-            timeline.to("section.navbar div.element a", {
-                y: "100%",
-                ease: "power4.out",
-                duration: 0.8,
-                stagger: 0.1,
-            }, 0);
-
-            timeline.to("section.navbar p", {
-                y: "100%",
-                ease: "power4.out",
-                duration: 0.4,
-                stagger: 0.1,
-            }, 0);
-
-            timeline.to("section.navbar hr", {
-                width: "0",
-                ease: "power4.out",
-                duration: 0.8,
-                stagger: 0.1,
-            }, 0);
-
-            timeline.to("section.navbar img", {
-                height: "0%",
-                ease: "power4.out",
-                duration: 0.8,
-            }, 0.4);
-
-            timeline.to("section.navbar", {
-                y: "-100vh",
-                ease: "power4.inOut",
-                duration: 1,
-                onComplete: () => {
-                    document.querySelector("section.navbar").classList.remove("show");
-                    document.querySelector("section.navbar img").style.height = "0";
-                    document.querySelector("section.navbar div.gray-divider").style.height = "0";
-                    document.querySelectorAll("section.navbar div.links a").forEach(element => element.style.transform = "translateY(-100%)");
-                }
-            }, 0.6);
+            CloseNavbar();
         } else {
             // handle show
             const timeline = gsap.timeline();
@@ -152,7 +159,7 @@ export default function Navbar() {
 
             <nav>
                 <div className="logo">
-                    <Link href="/" onClick={() => typeof timeline !== "undefined" ?? timeline.killAll()}>
+                    <Link href="/" onClick={CloseNavbar}>
                         <Image
                             src={logoLargeBlackImage}
                             alt="logo"
@@ -184,7 +191,7 @@ const ButtonElement = ({ options }) => {
         <div className="element">
             {options.href.startsWith("http") ? <a href={options.href} target="_blank" rel="noopener noreferrer">
                 {options.name}
-            </a> : <Link href={options.href}>
+            </a> : <Link href={options.href} onClick={CloseNavbar}>
                 {options.name}
             </Link>}
 
