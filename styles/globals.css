@@ -1222,6 +1222,7 @@ section.other-posts div.post {
 
 section.posts div.post img {
   margin-bottom: 24px;
+  object-fit: cover;
 }
 
 section.posts div.post h2.date,
