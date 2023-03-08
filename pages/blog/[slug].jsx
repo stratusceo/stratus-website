@@ -23,7 +23,7 @@ export default function Post({ allPostsData }) {
     const [content, setContent] = useState(allPostsData.find(element => element.id === router.query.slug));
 
     const [html, setHTML] = useState();
-    const [description, setDescription] = useState();
+    const [description, setDescription] = useState(content.post.replace(/\*\*|#|\n/g, ""));
 
     useEffect(() => {
         setWidthBanner(window.innerWidth);
@@ -38,7 +38,7 @@ export default function Post({ allPostsData }) {
 
                 setHTML(md.render(content.post));
 
-                let str = content.post.replace(/\*\*|#|\n/g, "");;
+                let str = content.post.replace(/\*\*|#|\n/g, "");
                 setDescription(str.slice(0, 100));
 
                 const indexPost = allPostsDataCopy.indexOf(content);
@@ -65,16 +65,15 @@ export default function Post({ allPostsData }) {
             <meta name="description" content={description} />
 
             <meta property="og:type" content="website" />
-            <meta property="og:url" content={content.bannerImage} />
+            <meta property="og:url" content={`https://stratusagency.io/blog/${slug}`} />
             <meta property="og:title" content={content.title} />
             <meta property="og:description" content={description} />
-            <meta property="og:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
+            <meta property="og:image" content={content.bannerImage} />
 
-            <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:url" content={content.bannerImage} />
+            <meta property="twitter:url" content={`https://stratusagency.io/blog/${slug}`} />
             <meta property="twitter:title" content={content.title} />
             <meta property="twitter:description" content={description} />
-            <meta property="twitter:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
+            <meta property="twitter:image" content={content.bannerImage} />
         </Head>
 
         {load ? <>
@@ -123,7 +122,10 @@ export default function Post({ allPostsData }) {
             </section>
 
             <CTA />
-        </> : undefined}
+        </> : <>
+            <h1>{content.title}</h1>
+            <div className="markdown" dangerouslySetInnerHTML={{ __html: html }} ></div>
+        </>}
     </>
 }
 

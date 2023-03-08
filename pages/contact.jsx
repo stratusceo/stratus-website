@@ -65,12 +65,12 @@ export default function Contact() {
                 <meta property="og:url" content="https://stratusagency.io/contact" />
                 <meta property="og:title" content="STRATUS - Contact" />
                 <meta property="og:description" content="Contact us by mail or on our website. We will get back to you within 72 hours, guaranteed." />
-                <meta property="og:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
+                <meta property="og:image" content="https://assets.stratusagency.io/final-min.jpg" />
 
                 <meta property="twitter:url" content="https://stratusagency.io/contact" />
                 <meta property="twitter:title" content="STRATUS - Contact" />
                 <meta property="twitter:description" content="Contact us by mail or on our website. We will get back to you within 72 hours, guaranteed." />
-                <meta property="twitter:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
+                <meta property="twitter:image" content="https://assets.stratusagency.io/final-min.jpg" />
             </Head>
 
             <section className="contact">

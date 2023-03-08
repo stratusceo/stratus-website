@@ -6,8 +6,6 @@ import CTA from "../components/CTA"
 import Link from "next/link"
 
 export default function Blog({ allPostsData }) {
-    console.log(allPostsData, 'allPostsData');
-
     const headline = allPostsData[0];
     const posts = allPostsData.slice(1, allPostsData.length);
 
@@ -23,12 +21,12 @@ export default function Blog({ allPostsData }) {
                 <meta property="og:url" content="https://stratusagency.io/blog" />
                 <meta property="og:title" content="STRATUS - Blog" />
                 <meta property="og:description" content="Read our latest articles on our commitments, Web 3.0 news and many other articles written just for you." />
-                <meta property="og:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
+                <meta property="og:image" content="https://assets.stratusagency.io/final-min.jpg" />
 
                 <meta property="twitter:url" content="https://stratusagency.io/blog" />
                 <meta property="twitter:title" content="STRATUS - Blog" />
                 <meta property="twitter:description" content="Read our latest articles on our commitments, Web 3.0 news and many other articles written just for you." />
-                <meta property="twitter:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
+                <meta property="twitter:image" content="https://assets.stratusagency.io/final-min.jpg" />
             </Head>
 
             <Navbar />

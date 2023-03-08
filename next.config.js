@@ -4,6 +4,10 @@ module.exports = {
     domains: ['assets.stratusagency.io', 'stratusagency.io'],
     unoptimized: true,
   },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
