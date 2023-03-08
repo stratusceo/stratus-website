@@ -1,7 +1,19 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/_error": "pages/_error.js",
+  "/sitemap.xml": "pages/sitemap.xml.js",
+  "/blog": "pages/blog.js",
   "/blog/[slug]": "pages/blog/[slug].js",
-  "/blog": "pages/blog.js"
+  "/en/404": "pages/en/404.html",
+  "/en/500": "pages/en/500.html",
+  "/en/components/CTA": "pages/en/components/CTA.html",
+  "/en/components/Navbar": "pages/en/components/Navbar.html",
+  "/en/contact": "pages/en/contact.html",
+  "/en": "pages/en.html",
+  "/en/layout": "pages/en/layout.html",
+  "/en/legal": "pages/en/legal.html",
+  "/en/work": "pages/en/work.html",
+  "/en/about": "pages/en/about.html",
+  "/en/components/Footer": "pages/en/components/Footer.html"
 }
