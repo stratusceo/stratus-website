@@ -12,15 +12,15 @@ import CTA from "../components/CTA";
 export default function Post({ allPostsData }) {
     const router = useRouter();
 
+    // Get the query parameter from the URL
+    const [slug, setSlug] = useState(router.query.slug);
+    const allPostsDataCopy = allPostsData;
+
     const [load, setLoad] = useState(false);
 
     const [widthBanner, setWidthBanner] = useState();
     const [otherPostsData, setOtherPostsData] = useState();
-    const [content, setContent] = useState();
-
-    // Get the query parameter from the URL
-    const [slug, setSlug] = useState(router.query.slug);
-    const allPostsDataCopy = allPostsData;
+    const [content, setContent] = useState(allPostsData.find(element => element.id === router.query.slug));
 
     const [html, setHTML] = useState();
     const [description, setDescription] = useState();
@@ -29,8 +29,6 @@ export default function Post({ allPostsData }) {
         setWidthBanner(window.innerWidth);
 
         if (!load) {
-            setContent(allPostsData.find(element => element.id === slug));
-
             if (content) {
                 const md = new MarkdownIt({
                     html: true,
@@ -58,7 +56,7 @@ export default function Post({ allPostsData }) {
         }
     }, [load, content, allPostsData, slug, otherPostsData, allPostsDataCopy]);
 
-    return load ? <>
+    return <>
         <Head>
             <title>{content.title}</title>
             <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -79,52 +77,54 @@ export default function Post({ allPostsData }) {
             <meta property="twitter:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
         </Head>
 
-        <section className="post headline">
-            <div className="text">
-                <h1>{content.title}</h1>
-                <h2>{content.date}</h2>
-            </div>
+        {load ? <>
+            <section className="post headline">
+                <div className="text">
+                    <h1>{content.title}</h1>
+                    <h2>{content.date}</h2>
+                </div>
 
-            <Image
-                src={content.bannerImage}
-                alt="thumbnail"
-                width={widthBanner ? widthBanner : 0}
-                height={700}
-            />
-        </section>
+                <Image
+                    src={content.bannerImage}
+                    alt="thumbnail"
+                    width={widthBanner ? widthBanner : 0}
+                    height={700}
+                />
+            </section>
 
-        <section className="post content">
-            <div className="markdown" dangerouslySetInnerHTML={{ __html: html }} ></div>
-        </section>
+            <section className="post content">
+                <div className="markdown" dangerouslySetInnerHTML={{ __html: html }} ></div>
+            </section>
 
-        <section className="other-posts">
-            <h2>OTHER POSTS</h2>
+            <section className="other-posts">
+                <h2>OTHER POSTS</h2>
 
-            <div className="row">
-                {otherPostsData.slice(0, 2).map(({ id, bannerImage, date, title }, i) => (
-                    <Link href={`/blog/${id}`} onClick={() => {
-                        setSlug(id)
-                        setLoad(false)
-                        setContent(undefined)
-                    }} key={i}>
-                        <div className="post">
-                            <Image
-                                src={bannerImage}
-                                alt="thumbnail"
-                                width={708}
-                                height={422}
-                            />
+                <div className="row">
+                    {otherPostsData.slice(0, 2).map(({ id, bannerImage, date, title }, i) => (
+                        <Link href={`/blog/${id}`} onClick={() => {
+                            setSlug(id)
+                            setLoad(false)
+                            setContent(allPostsData.find(element => element.id === id))
+                        }} key={i}>
+                            <div className="post">
+                                <Image
+                                    src={bannerImage}
+                                    alt="thumbnail"
+                                    width={708}
+                                    height={422}
+                                />
 
-                            <h2 className="date">{date}</h2>
-                            <h2 className="title">{title}</h2>
-                        </div>
-                    </Link>
-                ))}
-            </div>
-        </section>
+                                <h2 className="date">{date}</h2>
+                                <h2 className="title">{title}</h2>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            </section>
 
-        <CTA />
-    </> : undefined
+            <CTA />
+        </> : undefined}
+    </>
 }
 
 export async function getServerSideProps() {
