@@ -23,7 +23,7 @@ export default function Post({ allPostsData }) {
     const [content, setContent] = useState(allPostsData.find(element => element.id === router.query.slug));
 
     const [html, setHTML] = useState();
-    const [description, setDescription] = useState(content.post.replace(/\*\*|#|\n/g, "").slice(0, 150));
+    const [description, setDescription] = useState(`${content.post.replace(/\*\*|#|\n/g, "").slice(0, 150)}...`);
 
     useEffect(() => {
         setWidthBanner(window.innerWidth);
