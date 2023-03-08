@@ -8,12 +8,25 @@ import aboutDescription3Image from "../static/images/about-description-3.webp"
 
 import CTA from "./components/CTA"
 
-export default function About({ isFR }) {
+export default function About() {
     return (
         <>
             <Head>
                 <title>STRATUS -  About</title>
                 <link rel="shortcut icon" href="/static/favicon.ico" />
+
+                <meta name="title" content="STRATUS - About" />
+                <meta name="description" content="By leveraging the power of blockchain technology, we enable our clients to improve transparency, security, and efficiency in their operations." />
+
+                <meta property="og:url" content="https://stratusagency.io/about" />
+                <meta property="og:title" content="STRATUS - About" />
+                <meta property="og:description" content="By leveraging the power of blockchain technology, we enable our clients to improve transparency, security, and efficiency in their operations." />
+                <meta property="og:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
+
+                <meta property="twitter:url" content="https://stratusagency.io/about" />
+                <meta property="twitter:title" content="STRATUS - About" />
+                <meta property="twitter:description" content="By leveraging the power of blockchain technology, we enable our clients to improve transparency, security, and efficiency in their operations." />
+                <meta property="twitter:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
             </Head>
 
             <section className="about">
@@ -39,14 +52,14 @@ export default function About({ isFR }) {
                                 <p style={{ textAlign: 'justify' }}>
                                     By leveraging the power of blockchain technology, we enable our clients to improve transparency, security, and efficiency in their operations.
                                     Our team of experts has a deep understanding of blockchain technology and its
-                                    potential use cases, and we work closely with our clients to understand their unique needs and deliver customized
+                                    potential use cases, and we About closely with our clients to understand their unique needs and deliver customized
                                     solutions that drive real-world impact.
                                 </p>
 
                                 <br />
 
                                 <p style={{ textAlign: 'justify' }}>
-                                    We started in February 2022, and since then we have worked with a few companies like Netalys, Metaverse GT or SPAR Alpina.
+                                    We started in February 2022, and since then we have Abouted with a few companies like Netalys or SPAR Alpina.
                                 </p>
                             </div>
 

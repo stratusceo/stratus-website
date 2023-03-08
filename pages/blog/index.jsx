@@ -16,6 +16,19 @@ export default function Blog({ allPostsData }) {
             <Head>
                 <title>STRATUS - Blog</title>
                 <link rel="shortcut icon" href="/static/favicon.ico" />
+
+                <meta name="title" content="STRATUS - Blog" />
+                <meta name="description" content="Read our latest articles on our commitments, Web 3.0 news and many other articles written just for you." />
+
+                <meta property="og:url" content="https://stratusagency.io/blog" />
+                <meta property="og:title" content="STRATUS - Blog" />
+                <meta property="og:description" content="Read our latest articles on our commitments, Web 3.0 news and many other articles written just for you." />
+                <meta property="og:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
+
+                <meta property="twitter:url" content="https://stratusagency.io/blog" />
+                <meta property="twitter:title" content="STRATUS - Blog" />
+                <meta property="twitter:description" content="Read our latest articles on our commitments, Web 3.0 news and many other articles written just for you." />
+                <meta property="twitter:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
             </Head>
 
             <Navbar />

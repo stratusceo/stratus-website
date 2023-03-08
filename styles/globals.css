@@ -1359,9 +1359,9 @@ section.other-posts div.post {
 }
 
 section.other-posts div.post img {
+  object-fit: cover;
   margin-bottom: 24px;
   width: 100%;
-  height: auto;
 }
 
 section.other-posts div.post h2 {

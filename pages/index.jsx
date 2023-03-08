@@ -37,7 +37,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
 	const [load, setLoad] = useState(false);
-	const [timeline, setTimeline] = useState();
 
 	useEffect(() => {
 		if (!load) {
@@ -133,8 +132,6 @@ export default function App() {
 			tl.to('.portfolio .center', { yPercent: -25 }, 0)
 			tl.to(['.portfolio .left', '.portfolio .right'], { yPercent: 10 }, 0)
 
-			setTimeline(tl);
-
 			/**
 			 * BUTTONS ANIMS
 			 */
@@ -201,6 +198,19 @@ export default function App() {
 			<Head>
 				<title>STRATUS - Blockchain, Crypto, & Web 3.0 PR Agency</title>
 				<link rel="shortcut icon" href="/static/favicon.ico" />
+
+				<meta name="title" content="STRATUS - Blockchain, Crypto, & Web 3.0 PR Agency" />
+				<meta name="description" content="STRATUS is a leading Blockchain, Crypto, NFT & Web 3.0 PR provider. Committed as ETH validator, Ethereum & Solidity document official translator. Incubated at La French Tech Mont-Blanc." />
+
+				<meta property="og:url" content="https://stratusagency.io/" />
+				<meta property="og:title" content="STRATUS - Blockchain, Crypto, & Web 3.0 PR Agency" />
+				<meta property="og:description" content="STRATUS is a leading Blockchain, Crypto, NFT & Web 3.0 PR provider. Committed as ETH validator, Ethereum & Solidity document official translator. Incubated at La French Tech Mont-Blanc." />
+				<meta property="og:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
+
+				<meta property="twitter:url" content="https://stratusagency.io/" />
+				<meta property="twitter:title" content="STRATUS - Blockchain, Crypto, & Web 3.0 PR Agency" />
+				<meta property="twitter:description" content="STRATUS is a leading Blockchain, Crypto, NFT & Web 3.0 PR provider. Committed as ETH validator, Ethereum & Solidity document official translator. Incubated at La French Tech Mont-Blanc." />
+				<meta property="twitter:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
 			</Head>
 
 			<header>

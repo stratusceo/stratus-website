@@ -43,6 +43,19 @@ export default function Work() {
             <Head>
                 <title>STRATUS - Work</title>
                 <link rel="shortcut icon" href="/static/favicon.ico" />
+
+                <meta name="title" content="STRATUS - Work" />
+                <meta name="description" content="Discover our work and what we are doing to connect blockchain with real-world." />
+
+                <meta property="og:url" content="https://stratusagency.io/work" />
+                <meta property="og:title" content="STRATUS - Work" />
+                <meta property="og:description" content="Discover our work and what we are doing to connect blockchain with real-world." />
+                <meta property="og:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
+
+                <meta property="twitter:url" content="https://stratusagency.io/work" />
+                <meta property="twitter:title" content="STRATUS - Work" />
+                <meta property="twitter:description" content="Discover our work and what we are doing to connect blockchain with real-world." />
+                <meta property="twitter:image" content="https://cdn.discordapp.com/attachments/793382333339271178/1055180454900285540/icon_black.jpg" />
             </Head>
 
             <section className="work page">
