@@ -13,7 +13,7 @@ export default function Legal() {
             </Head>
 
             <section className="legal">
-                <h2>Legal</h2>
+                <h2 className="margin-20">CREDITS</h2>
 
                 <div className="margin-20">
                     <p>
@@ -24,15 +24,12 @@ export default function Legal() {
                     </p>
 
                     <p>
-                        Web template is made by {' '}
-                        <a href="https://www.leonardomattar.com/" target="_blank" rel="noopener noreferrer"><u>Leonardo Mattar</u></a>.
-                    </p>
-
-                    <p>
                         Icons are coming from {' '}
                         <a href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer"><u>Flaticon</u></a>.
                     </p>
                 </div>
+
+                <h2 className="margin-20">LEGAL</h2>
 
                 <div>
                     <p>Company Name: STRATUS</p>
@@ -46,7 +43,7 @@ export default function Legal() {
                     <p>Share capital: 1 000 € (EUR)</p>
                 </div>
 
-                <h2 className="margin-20">Host</h2>
+                <h2 className="margin-20">HOST</h2>
 
                 <div>
                     <p>LWS (Ligne Web Services)</p>

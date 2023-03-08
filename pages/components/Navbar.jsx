@@ -144,16 +144,10 @@ export default function Navbar() {
 
                 <div className="row copyrights">
                     <div className="element">
-                        <p>Copyright © STRATUS</p>
+                        <p>Copyright © 2023 STRATUS. All rights reserved.</p>
                     </div>
 
                     <div></div>
-
-                    <div className="element">
-                        <a href="https://www.leonardomattar.com/" rel="nopenner noreferrer" target="_blank">
-                            <p>© Leonardo Mattar</p>
-                        </a>
-                    </div>
                 </div>
             </section>
 
